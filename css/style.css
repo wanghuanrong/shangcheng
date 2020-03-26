@@ -1,0 +1,616 @@
+/* 顶部中间部分 */
+.container{
+    width: 1226px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 黑色顶部 */
+.page-top{
+    height: 38px;
+    background-color: #323232;
+}
+
+
+/* 黑色左边部分 */
+.page-top .top-lt{
+    height: 38px;
+    line-height: 38px;
+    float: left;
+}
+.page-top .top-lt span{
+    color: #3f3f3f;
+    padding: 0 3px;
+}
+
+.page-top .top-lt a:hover{
+    color: #fff;
+
+}
+/* 下载app中的二维码 */
+.page-top .top-lt .download{
+    display: inline-block;
+    position: relative;
+}
+.page-top .top-lt .down-box{
+    display: none;
+    width: 126px;
+    background-color: #fff;
+    position: absolute;
+    left: -30px;
+    top: 38px;
+    padding-top: 20px;
+    /* 设置阴影边框 */
+    box-shadow: rgb(170, 170, 170) 0px 1px 5px;
+    z-index: 1000;
+}
+
+.page-top .top-lt .down-box img{
+    width: 88px;
+    height: 88px;
+    display: block;
+    margin: 0 auto;
+}
+.page-top .top-lt .down-box b{
+    width: 19px;
+    height: 11px;
+    position: absolute;
+    background-image: url(../img/sjx.png);
+    left: 50%;
+    top: -11px;
+    margin-left: -10px;
+}
+.page-top .top-lt .down-box i{
+    color: #323232;
+    font-style: normal;
+    margin-left: 20px;
+}
+/* 鼠标进入名为download的a标签中 down-box 将会显示 ，离开就会隐藏*/
+.page-top .top-lt a.download:hover .down-box{
+    display: block;
+}
+
+/* 顶部的右边部分 */
+/* 未登录时右边部分 */
+.page-top .top-gt{
+    /* width: 300px; */
+    float: right;
+}
+.page-top .top-gt .login{
+    color: #a2a2a2;
+    line-height: 38px;
+    float: right;
+    margin-right: 20px;
+}
+.page-top .top-gt .login a:hover{
+    color: #fff;
+}
+.page-top .top-gt .login span{
+    color: #3f3f3f;
+    padding: 0 3px;
+}
+
+
+/* 登录后情况 */
+.page-top .top-gt .userinfo{
+    float: right;
+    margin-right: 5px;
+}
+.page-top .top-gt .userinfo .user{
+    width: 120px;
+    /* 需要将user中的ul盒子编程行内块状元素，要不然整个user会受到定位的影响飘起来 */
+    display: inline-block;
+    position: relative;
+}
+.page-top .top-gt .userinfo .user .tit{
+    line-height: 38px;
+    text-align: center;
+    display: block;
+    color: #a2a2a2;
+}
+.page-top .top-gt .userinfo span{
+    color: #3f3f3f; 
+}
+.page-top .top-gt .userinfo .user ul{
+    display: none;
+    width: 120px;
+    position: absolute;
+    left: 0px;
+    top: 38px;
+    padding: 10px 0;
+    box-shadow:0px 2px 10px rgba(0, 0, 0,0.15) ;
+}
+.page-top .top-gt .userinfo .user li{
+    text-align: center;
+    line-height: 30px;
+}
+/* 把li变成块状元素之后，鼠标不需要进入a中也会发生变化 */
+.page-top .top-gt .userinfo .user li a{
+    display: block;
+}
+.page-top .top-gt .userinfo .user li:hover{
+    background-color: #f5f5f5;
+    /* color: #ff6700; */
+}
+.page-top .top-gt .userinfo .user li:hover a{
+    /* background-color: #f5f5f5; */
+    color: #ff6700;
+}
+
+/* 鼠标进入“用户”时背景颜色变白  字体变主题色   下面的ul显示出来*/
+.page-top .top-gt .userinfo .user:hover{
+    background-color: #fff;
+}
+.page-top .top-gt .userinfo .user:hover .tit{
+    color: #ff6700;
+}
+.page-top .top-gt .userinfo .user:hover ul{
+    display: block;
+}
+
+/* 顶部购物车 */
+.page-top .top-gt .car-box{
+    float: right;
+    position: relative;
+}
+.page-top .top-gt .car-box .tit{
+    width: 118px;
+    height: 38px;
+    background-color: #424242;
+    display: block;
+    text-align: center;
+    line-height: 38px;
+    color: #a2a2a2;
+    position: relative;
+    z-index: 1000;
+}
+.page-top .car-box .pop{
+    width: 316px;
+    position: absolute;
+    top: 38px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    display: none;
+    font-size: 14px;
+    color:#424242;
+    z-index: 1000;
+}
+.page-top .car-box .pop .no-good{
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* 有商品时购物车下面的状态 */
+.page-top .car-box .list{
+    padding: 0 10px;
+    font-size: 12px;
+    /* 设置下拉菜单的最大高度防止过高，难看 */
+    max-height: 450px;
+    /* 如果超过设置的高度则滚动 */
+    overflow-y: scroll;
+    padding: 0 20px;
+    margin-top: 15px;
+}
+.page-top .car-box .list li{
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+    overflow: hidden;
+}
+/* li设置了下边框，最后一个也会显示出来，使用这个伪类可以解决 */
+.page-top .car-box .list li:last-child{
+    border: none;
+}
+.page-top .car-box .list .pic{
+    float: left;
+}
+.page-top .car-box .list img{
+    width: 60px;
+    height: 60px;
+}
+.page-top .car-box .list .txt{
+    width: 120px;
+    float: left;
+    line-height: 60px;
+    /* 下面三句让过长的字体变为省略号显示 */
+    /* 不换行 */
+    white-space: nowrap;
+    overflow: hidden;
+    /* 剪切的部分已省略号的形式显示 */
+    text-overflow: ellipsis;
+    margin-left: 5px;
+}
+.page-top .car-box .list .num{
+    float: right;
+}
+.page-top .car-box .list .num h4{
+    margin-top: 12px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.page-top .car-box .list .num i{
+    font-style: normal;
+    cursor: pointer;
+    color: #aaa;
+    float: right;
+}
+.page-top .car-box .list .num i:hover{
+    color: #333;
+}
+
+.page-top .car-box .total{
+    background-color: #fafafa;
+    padding: 15px 10px;
+    overflow: hidden;
+}
+.page-top .car-box .total .price{
+    float: left;
+}
+.page-top .car-box .total .price p{
+    color: #7e7e7e;
+}
+.page-top .car-box .total .price h3{
+    font-size: 20px;
+    color: #FF6700;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.page-top .car-box .total .btn{
+    width: 132px;
+    height: 40px;
+    background-color: #FF6700;
+    color: #fff;
+    line-height: 40px;
+    float: right;
+    display: block;
+    padding-left:40px;
+    margin-top: 10px;
+}
+
+
+
+.page-top .top-gt .car-box:hover .pop{
+    display: block;
+}
+.page-top .top-gt .car-box:hover .tit{
+    background-color: #fff;
+    color: #ff6700;
+}
+
+
+/* 导航栏 。。。。。。。。。。。。。。。。。。。。。。。。。。*/
+.page-nav{
+    height: 96px;
+    position: relative;
+}
+
+.page-nav .logo{
+    width: 54px;
+    height: 54px;
+    /* 要让a标签可以加入图片并显示出来要将其变为块状元素，且给予宽高 */
+    display: block;
+    background:url(../img/logo.png) center center no-repeat;
+    float: left;
+    margin-top: 21px;
+    margin-right: 45px;
+}
+
+.page-nav .nav .nav-item{
+    margin-left: 10px;
+    float: left;
+    padding-top: 35px;
+    margin-top: 24px;
+    padding: 10px 4px 0;
+    height: 72px;
+}
+.page-nav .nav .nav-item .tit{
+    font-size: 16px;
+    color: #666;
+}
+.page-nav .nav .nav-item:hover .tit{
+    color: #ff6700;
+}
+.page-nav .nav .nav-item .tit:hover{
+    color: #ff6700;
+}
+
+.page-nav .nav .nav-item .pop{
+    width: 100%;
+    height: 230px;
+    position: absolute;
+    top: 96px;
+    left: 0;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+    border-top: 1px solid #e0e0e0;
+    display: none;
+    background-color: #fff;
+    z-index: 1000;
+}
+.page-nav .down-li{
+    width: 241px;
+    float: left;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+.page-nav .down-li .pic img{
+    width: 100px;
+    height: 110px;
+}
+.page-nav .down-li .name{
+    font-weight: normal;
+    font-size: 13px;
+    margin-top: 20px;
+}
+.page-nav .down-li .price{
+    color: #FF6700;
+    margin-top: 4px;
+}
+.page-nav .down-li .tags{
+    width: 64px;
+    height: 20px;
+    border: 1px solid #ff6700;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    left: 50%;
+    top: -1px;
+    margin-left: -32px;
+    color: #ff6700;
+}
+
+.page-nav .down-li i{
+    background-color: #e0e0e0;
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    top: 36px;
+    right: 0;
+}
+/* .page-nav .down-li i, */
+.page-nav .down-li:last-child i{
+    display: none;
+}
+/* 每个.nav-item中都有.pop
+   因为：hover是控制子元素的
+   所以不用担心会错乱，在这里进入相应的父元素，显示相应的子pop */
+.page-nav .nav .nav-item:hover .pop{
+    display: block;
+}
+
+
+/* 导航栏中的全部分类，下拉菜单 */
+#page-all-nav{
+    /* 是元素隐藏，但还占据位置 */
+    visibility: hidden;
+    position: relative;
+}
+.slider-nav{
+    position: absolute;
+    top: 72px;
+    right: -19px;
+    width: 232px;
+    height: 460px;
+    /* border: 1px solid red; */
+    padding: 20px 0;
+    /* background-color: #fff; */
+    z-index: 100;
+}
+.slider-nav .slider-li{
+    line-height: 41px;
+    padding: 0 24px 0 30px;
+}
+
+.slider-nav .slider-li .name{
+    font-size: 13px;
+    display: block;
+}
+.slider-nav .slider-li .name span{
+    margin-right: 5px;
+}
+.slider-nav .slider-li i{
+    float: right;
+}
+.slider-nav .slider-li:hover{
+    background-color: #FF6700;
+}
+.slider-nav .slider-li:hover .name{
+    color: #fff;
+} 
+.slider-nav .slider-li .slider-pop{
+    width: 994px;
+    height: 461px;
+    position: absolute;
+    background-color: #fff;
+    left: 232px;
+    top: 0px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    border: 1px solid #e0e0e0;
+    display: none;
+}
+.slider-nav .slider-pop .pop-li{
+    float: left;
+    width: 223px;
+    padding-left: 24px;
+    /* background-color: red; */
+    overflow: hidden;
+    height: 70px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+.slider-nav .slider-pop .pop-li img{
+    width: 30px;
+    height: 40px;
+    float: left;
+    margin-right: 16px;
+}
+.slider-nav .slider-pop .pop-li:hover p{
+    color: #ff6700;
+}
+.slider-nav .slider-ul .slider-li:hover .slider-pop{
+    display: block;
+}
+
+/* 导航栏中的搜索框部分 */
+.page-nav .search{
+    float: right;
+    margin-top: 26px;
+    position: relative;
+}
+.search .q{
+    width: 230px;
+    height: 48px;
+    border: 1px solid #ff6700;
+    /* outline: none; */
+    line-height: 48px;
+    padding-left: 4px;
+    float: left;
+    font-size: 20px;
+}
+.page-nav .search .btn{
+    width: 50px;
+    height: 48px;
+    border: 1px solid #ff6700;
+    border-left: none;
+    float: left;
+    background-color:white;
+    /* background-image: url(../img/fangdajing.png); */
+    background: white url(../img/fangdajing.png) no-repeat center center;
+    background-size: 20px 20px;
+}
+.page-nav .search .btn:hover{
+    background-color: #ff6700;
+    color: #fff;
+    cursor: pointer;
+}
+.page-nav .search .tags{
+    width: 150px;
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    left: 80px;
+}
+.page-nav .search .tags span{
+    background-color: #eee;
+    line-height: 48px;
+    font-size: 14px;
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 1px 2px;
+}
+.page-nav .search .tags span:hover{
+    background-color: #ff6700;
+    color: #fff;
+}
+input[type="text"]:focus .tags{
+    background-color: red;
+}
+/* .page-nav .search .tags .q:focus .tags{
+    display: none;
+} */
+.page-nav .search .hot{
+    width: 230px;
+    border: 1px solid #ff6700;
+    border-top: none;
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    top: 48px;
+    z-index: 1001;
+}
+
+.search .hot li{
+    line-height: 30px;
+}
+.search .hot li a{
+    display: block;
+    padding: 0 15px;
+    color: #535353;
+}
+.search .hot li:hover{
+    background-color: #fafafa;
+}
+.search .hot li i{
+    float: right;
+    font-style: normal;
+    color: #b0b0b0;
+}
+
+/* 轮播图 。。。。。。。。。。。。。。。。。。。。。。 */
+.idx-banner{
+    height: 460px;
+    overflow: hidden;
+    position: relative;
+}
+.idx-banner ul{
+    width: 5000px;
+    height: 460px;
+}
+.idx-banner .banner-list li{
+    float: left;
+}
+.idx-banner .banner-list li img{
+    width: 1226px;
+    height: 460px;
+    float: left;
+}
+.idx-banner .btu{
+    width: 42px;
+    height: 70px;
+    /* border: 1px solid red; */
+    display: inline-block;
+    /* float: left; */
+    cursor: pointer;
+}
+.idx-banner .btu:hover{
+    background-color: #757F7E;
+    color: #D2D6D5;
+}
+.idx-banner .prev{
+    background: url(../img/xiangzuo.png) no-repeat center center;
+    position: absolute;
+    left: 232px;
+    top: 195px;
+
+}
+.idx-banner .next{
+    background: url(../img/xiangyou.png) no-repeat center center;
+    position: absolute;
+    left: 1184px;
+    top: 195px;
+} 
+.idx-banner .page{
+    display: inline-block;
+    /* width: 80px; */
+    height: 30px;
+    /* border: 1px solid red; */
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    z-index: 100;
+    width: 100%;
+    height: 10px;
+    text-align: right;
+    margin-right: 20px;
+}
+.idx-banner .page a{
+    display: inline-block;
+    margin: 0 5px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-color: rgba(0, 0, 0, 0.3);
+    font-size: 0;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.idx-banner .page a:hover{
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: #757575;
+    border-color: rgba(0, 0, 0, 0.4)
+}
+.idx-banner .page span{
+    visibility: hidden;
+}
